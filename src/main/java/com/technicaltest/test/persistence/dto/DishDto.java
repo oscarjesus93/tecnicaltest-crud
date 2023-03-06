@@ -8,10 +8,9 @@ import java.time.LocalDate;
 public class DishDto {
 
     private String nombre;
-    private LocalDate inicioActividad;
     private String color;
     private double precio;
     private String campos;
-    private boolean oferta;
+    private Integer oferta;
 
 }
