@@ -59,6 +59,11 @@ public class DishService {
         dish.setNombre(dishDto.getNombre());
         dish.setColor(dishDto.getColor());
         dish.setOferta( (dishDto.getOferta() == 1) ? true : false );
+
+        if(dishDto.getPrecio() > 25){
+            throw new Exceptions("The price cannot exceed 25 usd", HttpStatus.BAD_REQUEST);
+        }
+
         dish.setPrecio(dishDto.getPrecio());
 
         return this.repository.save(dish);

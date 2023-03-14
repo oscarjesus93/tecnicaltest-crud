@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface DishRepository extends JpaRepository<Dish, Long> {
 
-    @Query(value = "select * from dish where inicio_actividad >= :date", nativeQuery = true)
+    @Query(value = "select * from dish", nativeQuery = true)
     public List<Dish> listDishFilter(LocalDate date);
 
 }
